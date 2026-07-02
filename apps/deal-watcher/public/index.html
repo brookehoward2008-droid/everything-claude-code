@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travel Deal Watcher</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">SerpApi radar</p>
+        <h1>Travel Deal Watcher</h1>
+        <p class="lede">Watch cruises, all-inclusive trips, last-minute tickets, and mistake fares like a price board.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="demoScanButton" type="button">Run demo scan</button>
+        <button id="liveScanButton" type="button" class="secondary">Run live scan</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="stats" aria-label="Deal statistics">
+        <article>
+          <span id="totalDeals">0</span>
+          <p>Total tracked</p>
+        </article>
+        <article>
+          <span id="qualifiedDeals">0</span>
+          <p>Qualified</p>
+        </article>
+        <article>
+          <span id="highConfidenceDeals">0</span>
+          <p>High confidence</p>
+        </article>
+        <article>
+          <span id="riskCount">0</span>
+          <p>Risk flags</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Watchlists</p>
+            <h2>Deal agents</h2>
+          </div>
+        </div>
+        <div id="watchlists" class="watchlist-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Ranked signals</p>
+            <h2>Top deal candidates</h2>
+          </div>
+          <label>
+            Filter
+            <select id="verticalFilter">
+              <option value="all">All verticals</option>
+              <option value="cruise">Cruises</option>
+              <option value="all_inclusive">All-inclusive</option>
+              <option value="tickets">Tickets</option>
+              <option value="mistake_fare">Mistake fares</option>
+            </select>
+          </label>
+        </div>
+        <div id="deals" class="deal-list"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Never stores SerpApi raw HTML URLs, JSON endpoint IDs, API keys, passenger data, or payment data.</p>
+    </footer>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
