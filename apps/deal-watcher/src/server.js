@@ -2,7 +2,6 @@
 // Purpose: Small dependency-free local dashboard and API server for the travel deal watcher.
 
 import { createReadStream } from 'node:fs';
-import { readFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
