@@ -38,6 +38,14 @@ body {
   color: var(--text);
 }
 
+code {
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  padding: 0.08rem 0.28rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--accent-strong);
+}
+
 button,
 select,
 input {
