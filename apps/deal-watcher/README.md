@@ -139,10 +139,12 @@ This is a working local MVP. It has:
 - risk flags
 - source/review/social separation
 
-Still needed for production:
+## Next build layer
+
+The next strong app layer should add:
 
 - scheduled scans
-- email/SMS alerts
+- email or SMS alerts
 - direct price verification
 - login-free provider integrations where permitted
 - database storage such as Supabase/Postgres
