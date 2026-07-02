@@ -22,9 +22,42 @@ The useful booking or deal-source candidates are:
 | Club Med | Direct all-inclusive resort operator with percent-off promos | Primary deal source |
 | Travelzoo | Deal collection with specific savings claims | Deal discovery source |
 | Funjet Vacations | Package seller with flights + resort + one-price language | Primary deal source |
+| Resort Vacations To Go | Resort-side Vacations To Go source with all-inclusive resort/package language | Primary deal source |
+| Vacations To Go | Mixed cruise/resort agency and source-discovery signal | Primary deal source |
 | Tripadvisor | Review/comparison result | Reputation check only |
+| ConsumerAffairs | Customer-review and complaint result | Reputation check only |
+| Trustpilot | Customer-review result | Reputation check only |
 | Reddit/Facebook | User-source discussion | Warning/reputation signal only |
 | YouTube | Research content | Not a booking source |
+
+## Vacations To Go SERP interpretation
+
+Query tested:
+
+```txt
+Vacations to go
+```
+
+This result is useful because it separates two related watcher targets:
+
+```txt
+vacationstogo.com           -> cruise-heavy agency source and parent travel brand
+resortvacationstogo.com     -> resort/all-inclusive package source
+```
+
+The watcher should treat `vacationstogo.com` as a valid cruise-agency source and `resortvacationstogo.com` as a valid all-inclusive resort-package source.
+
+The SERP also produced reputation and discussion sources:
+
+```txt
+consumeraffairs.com
+trustpilot.com
+reddit.com
+tripadvisor.com
+youtube.com
+```
+
+These should not be scored as verified prices. They should feed reputation, warning, and research labels only.
 
 ## Why the query is not enough
 
@@ -61,6 +94,8 @@ site:allinclusiveoutlet.com family all inclusive from SEA
 site:cheapcaribbean.com all inclusive package from SEA
 site:applevacations.com all inclusive deals from SEA
 site:funjet.com all inclusive vacation packages from SEA
+site:resortvacationstogo.com all-inclusive resorts family package
+site:vacationstogo.com all-inclusive packages resorts
 site:travelzoo.com all-inclusive Cancun save family
 ```
 
@@ -117,6 +152,7 @@ TRANSFER_NOT_CONFIRMED
 UNVERIFIED_SOCIAL_SOURCE
 VIDEO_NOT_BOOKING_SOURCE
 REVIEW_SOURCE_NOT_BOOKING_SOURCE
+REPUTATION_CHECK_REQUIRED
 ```
 
 ## Privacy and safety
