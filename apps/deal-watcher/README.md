@@ -9,6 +9,25 @@ It currently tracks four deal verticals:
 - last-minute ticket deals
 - mistake fares / error fares / glitch fares
 
+## UI
+
+The dashboard includes:
+
+- top status bar
+- scan station for demo and live scans
+- top-signals ticker
+- five metric cards
+- watchlist agent lanes
+- ranked deal board
+- vertical filter
+- confidence filter
+- sort control
+- keyword search
+- score meters
+- confidence pills
+- badge, risk, and reject labels
+- mobile-responsive layout
+
 ## Safety boundaries
 
 The app does **not** store:
@@ -111,6 +130,7 @@ Mistake fares can disappear quickly and may be canceled after booking. The app l
 This is a working local MVP. It has:
 
 - local dashboard
+- market-board UI
 - safe SerpApi client
 - demo scan mode
 - JSON storage
