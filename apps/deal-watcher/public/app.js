@@ -261,11 +261,16 @@ function applyDealFilters(deals) {
     }
 
     if (state.sortBy === 'newest') {
-      return Date.parse(b.lastSeenAt || b.searchedAt || 0) - Date.parse(a.lastSeenAt || a.searchedAt || 0);
+      return getDealTimestamp(b) - getDealTimestamp(a);
     }
 
     return b.score - a.score;
   });
+}
+
+function getDealTimestamp(deal) {
+  const parsed = Date.parse(deal.lastSeenAt || deal.searchedAt || '');
+  return Number.isNaN(parsed) ? 0 : parsed;
 }
 
 function formatDate(value) {
