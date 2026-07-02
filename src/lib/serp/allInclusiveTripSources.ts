@@ -42,6 +42,18 @@ export const ALL_INCLUSIVE_TRIP_SOURCES: AllInclusiveSourceDefinition[] = [
     notes: "Direct resort operator. Useful for percent-off promotions and ending-soon urgency language.",
   },
   {
+    domain: "resortvacationstogo.com",
+    displayName: "Resort Vacations To Go",
+    tier: "primary_deal_source",
+    notes: "Vacations To Go resort-side domain. Useful for all-inclusive hotel, resort, meal, drink, and bundled-price signals.",
+  },
+  {
+    domain: "vacationstogo.com",
+    displayName: "Vacations To Go",
+    tier: "primary_deal_source",
+    notes: "Mixed travel-agency source. Strong for cruise monitoring and useful as a parent/source-discovery signal for resort packages.",
+  },
+  {
     domain: "travelzoo.com",
     displayName: "Travelzoo",
     tier: "deal_collection",
@@ -52,6 +64,24 @@ export const ALL_INCLUSIVE_TRIP_SOURCES: AllInclusiveSourceDefinition[] = [
     displayName: "Tripadvisor",
     tier: "research_or_review",
     notes: "Review and comparison source. Useful for reputation checks, not a primary booking-source score.",
+  },
+  {
+    domain: "consumeraffairs.com",
+    displayName: "ConsumerAffairs",
+    tier: "research_or_review",
+    notes: "Customer-review and complaint source. Useful for reputation checks before trusting a booking source.",
+  },
+  {
+    domain: "trustpilot.com",
+    displayName: "Trustpilot",
+    tier: "research_or_review",
+    notes: "Customer-review source. Useful for reputation checks, not verified deal pricing.",
+  },
+  {
+    domain: "youtube.com",
+    displayName: "YouTube",
+    tier: "research_or_review",
+    notes: "Research and walkthrough content. Useful for workflow education, not a booking source.",
   },
   {
     domain: "reddit.com",
