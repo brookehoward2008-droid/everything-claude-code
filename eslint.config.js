@@ -30,5 +30,16 @@ module.exports = [
         languageOptions: {
             sourceType: 'module'
         }
+    },
+    {
+        files: ['apps/deal-watcher/**/*.js'],
+        languageOptions: {
+            sourceType: 'module',
+            globals: {
+                ...globals.node,
+                ...globals.es2022,
+                ...globals.browser
+            }
+        }
     }
 ];

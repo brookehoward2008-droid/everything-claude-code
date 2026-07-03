@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>DealWatch Market Board</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#deals">Skip to deals</a>
+
+    <div class="app-shell">
+      <header class="topbar" aria-label="Application header">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true">DW</div>
+          <div>
+            <p class="eyebrow">SerpApi radar</p>
+            <strong>DealWatch</strong>
+          </div>
+        </div>
+        <div class="status-pill" id="scanStatus" aria-live="polite">Ready</div>
+      </header>
+
+      <section class="hero-grid" aria-labelledby="pageTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">Travel intelligence board</p>
+          <h1 id="pageTitle">Watch travel deals like a market board.</h1>
+          <p class="lede">Track cruises, all-inclusive packages, last-minute tickets, and mistake fares. Every signal is scored, labeled, and separated from social chatter or review-only noise.</p>
+        </div>
+
+        <aside class="scan-console" aria-label="Scan controls">
+          <div class="console-header">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <div>
+              <p class="eyebrow">Scan station</p>
+              <h2>Run agents</h2>
+            </div>
+          </div>
+          <p>Start with demo mode, then switch to live mode after setting <code>SERPAPI_KEY</code> locally.</p>
+          <div class="hero-actions">
+            <button id="demoScanButton" type="button">Run demo scan</button>
+            <button id="liveScanButton" type="button" class="secondary">Run live scan</button>
+          </div>
+          <dl class="console-facts">
+            <div>
+              <dt>Mode</dt>
+              <dd id="latestMode">None</dd>
+            </div>
+            <div>
+              <dt>Last run</dt>
+              <dd id="latestRun">Not scanned</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="market-strip" aria-label="Top deal ticker">
+        <div class="strip-label">Top signals</div>
+        <div id="marketTicker" class="ticker-track">Run a scan to populate the board.</div>
+      </section>
+
+      <main>
+        <section class="stats" aria-label="Deal statistics">
+          <article>
+            <span id="totalDeals">0</span>
+            <p>Total tracked</p>
+          </article>
+          <article>
+            <span id="qualifiedDeals">0</span>
+            <p>Qualified</p>
+          </article>
+          <article>
+            <span id="highConfidenceDeals">0</span>
+            <p>High confidence</p>
+          </article>
+          <article>
+            <span id="riskCount">0</span>
+            <p>Risk flags</p>
+          </article>
+          <article>
+            <span id="averageScore">0</span>
+            <p>Average score</p>
+          </article>
+        </section>
+
+        <section class="layout-grid">
+          <aside class="panel agent-panel" aria-labelledby="agentsTitle">
+            <div class="panel-header compact">
+              <div>
+                <p class="eyebrow">Agents</p>
+                <h2 id="agentsTitle">Watchlist lanes</h2>
+              </div>
+            </div>
+            <div id="agentLanes" class="agent-lanes"></div>
+          </aside>
+
+          <section class="panel board-panel" aria-labelledby="dealsTitle">
+            <div class="panel-header board-header">
+              <div>
+                <p class="eyebrow">Ranked signals</p>
+                <h2 id="dealsTitle">Deal board</h2>
+              </div>
+              <div class="toolbar" aria-label="Deal filters">
+                <label>
+                  Type
+                  <select id="verticalFilter">
+                    <option value="all">All</option>
+                    <option value="cruise">Cruises</option>
+                    <option value="all_inclusive">All-inclusive</option>
+                    <option value="tickets">Tickets</option>
+                    <option value="mistake_fare">Mistake fares</option>
+                  </select>
+                </label>
+                <label>
+                  Confidence
+                  <select id="confidenceFilter">
+                    <option value="all">All</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                  </select>
+                </label>
+                <label>
+                  Sort
+                  <select id="sortSelect">
+                    <option value="score">Score</option>
+                    <option value="risk">Risk</option>
+                    <option value="newest">Newest</option>
+                  </select>
+                </label>
+                <label class="search-field">
+                  Search
+                  <input id="searchInput" type="search" placeholder="Going, suite, Expedia...">
+                </label>
+              </div>
+            </div>
+
+            <div id="deals" class="deal-list"></div>
+          </section>
+        </section>
+      </main>
+
+      <footer>
+        <p>Local-first MVP. It does not store SerpApi keys, raw endpoint IDs, raw HTML URLs, passenger data, booking credentials, or payment details.</p>
+      </footer>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

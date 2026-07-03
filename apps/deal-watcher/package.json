@@ -1,0 +1,17 @@
+{
+  "name": "travel-deal-watcher",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "SerpApi-powered travel deal watcher for cruises, all-inclusive trips, last-minute tickets, and mistake fares.",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js",
+    "scan": "node src/scan.js",
+    "demo": "DEAL_WATCHER_DEMO=1 node src/server.js",
+    "test": "node src/smoke-test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

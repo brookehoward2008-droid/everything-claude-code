@@ -79,6 +79,9 @@ marketing/
 .claude/worktrees/
 .claude/scheduled_tasks.lock
 
+# Travel deal watcher local data
+apps/deal-watcher/data/
+
 # Temporary files
 tmp/
 temp/
